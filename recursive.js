@@ -142,3 +142,21 @@ function fib2(n) {
     if (n <= 2) return 1;
     return fib(n - 1) + fib(n - 2);
 }
+
+// 👉 practice problem(advanced) 1
+
+function reverse(str) {
+    let reversed = [];
+
+    function helper(helperStr) {
+        if (helperStr.length === 0) {
+            return;
+        }
+        reversed.push(helperStr[0]);
+        return reverse(helperStr.slice(1));
+    }
+    helper(str);
+
+    return reversed.join("");
+}
+reverse("hello");

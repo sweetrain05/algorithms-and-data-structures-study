@@ -89,3 +89,23 @@ function selectionSort(arr) {
     return arr;
 }
 selectionSort([9, 6, 73, 12, 25, 64]);
+
+//------------------------------------------------------------
+//✨ Insertion Sort
+// -> starting from 2nd value in an array, it compares itself to elements before it one by one,
+//    until it finds right place. Then it inserts itself to that place.
+//👉 Time complexity: O(n^2)
+//    but if data is nearly sorted, could be faster.
+// -> Good if you are sorting and pushing new data at the same time.
+
+function insertionSort(arr) {
+    for (let i = 1; i < arr.length; i++) {
+        let pointer = arr[i];
+        for (var j = i - 1; j >= 0 && arr[j] > pointer; j--) {
+            arr[j + 1] = arr[j];
+        }
+        arr[j + 1] = pointer;
+    }
+    return arr;
+}
+insertionSort([9, 6, 73, 12, 25, 3, 64]);
